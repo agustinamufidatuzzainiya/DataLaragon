@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UTS-AGUSTINA MUFIDATUZZAINIYA</title>
+</head>
+<body>
+	<h1 style= "text-align: center;" >SELAMAT DATANG DI HALAMAN WEB "NIYA"</h1>
+    <h2 style= "text-align: center;" >UTS-AGUSTINA MUFIDATUZZAINIYA!</h2>
+	<button onclick="convertMeterToFeet()">Meter to Feet</button>
+	<button onclick="convertCentimeterToInch()">Centimeter to Inch</button>
+
+	<script>
+		function convertMeterToFeet() {
+			var meterValue = prompt("Masukkan nilai meter:");
+			var feetValue = meterValue * 3.2808;
+			alert(meterValue + " meter = " + feetValue.toFixed(2) + " feet");
+		}
+
+		function convertCentimeterToInch() {
+			var centimeterValue = prompt("Masukkan nilai sentimeter:");
+			var inchValue = centimeterValue * 0.3937;
+			alert(centimeterValue + " sentimeter = " + inchValue.toFixed(2) + " inches");
+		}
+	</script>
+</body>
+</html>

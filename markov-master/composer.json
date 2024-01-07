@@ -1,0 +1,16 @@
+{
+  "name": "fieg/markov",
+  "description": "Implementation of MarkovChain algorithm in PHP",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fieg\\Markov\\": "src/Markov"
+    }
+  }
+}

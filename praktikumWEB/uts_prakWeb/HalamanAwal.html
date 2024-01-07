@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UTS-AGUSTINA MUFIDATUZZAINIYA</title>
+</head>
+<body style="text-align: center;">
+	<h1>SELAMAT DATANG DI HALAMAN WEB "NIYA"!</h1>
+	<h2>UTS-AGUSTINA MUFIDATUZZAINIYA!</h2>
+	<button style = "font-size: 15px;" onclick="showMeterToFeetForm()">Meter to Feet</button>
+	<button style = "font-size: 15px;" onclick="showCentimeterToInchForm()">Centimeter to Inch</button>
+
+	<div id="meterToFeetForm" style="display:none">
+		<form>
+			<label for="meterValue">Masukkan nilai meter:</label>
+			<input type="text" id="meterValue" name="meterValue">
+			<button type="submit" onclick="convertMeterToFeet()">Konversi</button>
+		</form>
+	</div>
+
+	<div id="centimeterToInchForm" style="display:none">
+		<form>
+			<label for="centimeterValue">Masukkan nilai sentimeter:</label>
+			<input type="text" id="centimeterValue" name="centimeterValue">
+			<button type="submit" onclick="convertCentimeterToInch()">Konversi</button>
+		</form>
+	</div>
+
+	<script>
+		function showMeterToFeetForm() {
+			document.getElementById("meterToFeetForm").style.display = "block";
+			document.getElementById("centimeterToInchForm").style.display = "none";
+		}
+
+		function showCentimeterToInchForm() {
+			document.getElementById("meterToFeetForm").style.display = "none";
+			document.getElementById("centimeterToInchForm").style.display = "block";
+		}
+
+		function convertMeterToFeet() {
+			event.preventDefault();
+			var meterValue = document.getElementById("meterValue").value;
+			if (meterValue === "" || isNaN(meterValue)) {
+				alert("Masukkan nilai meter yang valid!");
+			} else {
+				var feetValue = meterValue * 3.2808;
+				alert(meterValue + " meter = " + feetValue.toFixed(2) + " feet");
+			}
+		}
+
+		function convertCentimeterToInch() {
+			event.preventDefault();
+			var centimeterValue = document.getElementById("centimeterValue").value;
+			if (centimeterValue === "" || isNaN(centimeterValue)) {
+				alert("Masukkan nilai sentimeter yang valid!");
+			} else {
+				var inchValue = centimeterValue * 0.3937;
+				alert(centimeterValue + " sentimeter = " + inchValue.toFixed(2) + " inches");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UTS-AGUSTINA MUFIDATUZZAINIYA</title>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<!-- Halaman Awal -->
+<body style="text-align: center;">
+	<h1>SELAMAT DATANG DI HALAMAN WEB "NIYA"!</h1>
+	<h2>UTS-AGUSTINA MUFIDATUZZAINIYA!</h2>
+  <h3>NIM 210605110144</h3>
+
+	<button style = "font-size: 15px;" onclick="displayMeterToFeet()">
+    Meter to Feet</button><a href="metertofeet.php"></a>
+	<button style = "font-size: 15px;" onclick="displayCmToInch()">
+    Centimeter to Inch</button><a href="cmtoinch.php"></a><br>
+
+  <div id="input-div" style="display:none"><br>
+		<label for="input-value">Masukkan Besaran Nilai:</label>
+		<input type="text" id="input-value" name="input-value">
+		<button onclick="convert()">Konversi</button>
+	</div>
+
+	<div id="output-div" style="display:none"><br>
+		<label for="output-value">Hasil Konversi:</label>
+		<input type="text" id="output-value" name="output-value" readonly>
+	</div>
+
+  <!-- Fungsi Untuk Memanggil isian besaran nilai yg akan dikonversi
+  dan kode untuk validasi bahwa isian tidak boleh kosong dan 
+  isian harus angka (jika diisi selain angka) -->
+    <script>
+        function displayMeterToFeet() {
+            document.getElementById("input-div").style.display = "block";
+            document.getElementById("output-div").style.display = "block";
+            document.getElementById("input-value").placeholder = 
+            "Masukkan nilai dalam meter";
+        }
+          
+          function displayCmToInch() {
+            document.getElementById("input-div").style.display = "block";
+            document.getElementById("output-div").style.display = "block";
+            document.getElementById("input-value").placeholder = 
+            "Masukkan nilai dalam cm";
+        }
+          
+          function convert() {
+            var input = document.getElementById("input-value").value;
+            if (input == "") {
+              alert("Isian tidak boleh kosong");
+              return;
+            }
+            if (isNaN(input)) {
+              alert("Isian harus angka");
+              return;
+            }
+            var output = document.getElementById("output-value");
+            if (document.getElementById("input-value").placeholder == 
+            "Masukkan nilai dalam meter") {
+              output.value = input * 3.28 + " ft";
+            } else {
+              output.value = input * 0.393 + " inch";
+            }
+        }
+    </script>
+</body>
+</html>
